@@ -22,7 +22,7 @@ D = [0];
 sys= ss(A, B, C, D);
 damp (sys)
 
-%% Q7 Answer%                                                                        
+%% Answer of Q7%                                                                        
 %          Pole              Damping       Frequency      Time Constant  
 %                                        (rad/seconds)      (seconds)    
 %                                                                        
