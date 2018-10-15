@@ -47,8 +47,14 @@ initial(sys,x0);
 bode(sys);
 nichols(sys);
 
-%% Q12 check the controllable of system
+%% Q12 check controllable of the system
 ctrb(sys) % or ctrb(A,B) - using for controllable
 rank(ctrb(sys)) % rank calculate 
 %rank result is 4 - this rank equal the number of pole(4); diff off rank and pole is 4-4=0. Result of diff (0) is number of non-controllable pole.
+%This system is controllable
 
+%% Q13 check observable of the system
+obsv(sys) % or obsv(C,D) - using for observable
+rank(obsv(sys)) % rank calculate 
+%rank result is 4 - this rank equal the number of pole(4); diff off rank and pole is 4-4=0. Result of diff (0) is number of non-observable pole.
+%This system is observable
