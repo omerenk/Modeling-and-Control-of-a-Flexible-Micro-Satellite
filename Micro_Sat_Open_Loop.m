@@ -12,7 +12,7 @@ To_m = 0.8; %meqsure,ent delay second
 noise = 10^-9; %meqsurement noise variance
 T_e = 0.5; %estimator time constant second
 T_d = 0.001; % disturbqnce torque N*m
-noise_0 = 0.0001; %initial condition on the state n
+n_0 = 0.0001; %initial condition on the state n
 
 %% Q7 function ss and damp
 A = [0 1 0 0; 0 0 -w^2/(1-a) -2*D_r*w/(1-a); 0 0 0 1; 0 0 -w^2/(1-a) -2*D_r*w/(1-a)];
@@ -34,5 +34,11 @@ damp (sys);
 
 %% Q9 linmod 
 [A2,B2,C2,D2] = linmod('Satellite_simulink_linmod');
-sys = ss(A2,B2,C2,D2)
+sys = ss(A2,B2,C2,D2);
 damp(sys);
+
+%% Q10 undriven response with a nonzero initial condition on the state n
+step (sys);
+x0= [0; 0; n_0 ; 0];
+
+initial(sys,x0);
