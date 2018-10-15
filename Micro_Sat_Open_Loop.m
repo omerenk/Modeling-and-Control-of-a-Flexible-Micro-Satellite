@@ -46,3 +46,9 @@ initial(sys,x0);
 %% Q11 display the bode and nichols plots of the system
 bode(sys);
 nichols(sys);
+
+%% Q12 check the controllable of system
+ctrb(sys) % or ctrb(A,B) - using for controllable
+rank(ctrb(sys)) % rank calculate 
+%rank result is 4 - this rank equal the number of pole(4); diff off rank and pole is 4-4=0. Result of diff (0) is number of non-controllable pole.
+
