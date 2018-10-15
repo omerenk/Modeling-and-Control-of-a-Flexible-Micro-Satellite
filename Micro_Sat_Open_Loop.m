@@ -42,3 +42,7 @@ step (sys);
 x0= [0; 0; n_0 ; 0];
 
 initial(sys,x0);
+
+%% Q11 display the bode and nichols plots of the system
+bode(sys);
+nichols(sys);
