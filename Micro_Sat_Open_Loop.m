@@ -8,6 +8,7 @@ e = 0.00495; %flexible mode damping ratio
 J_r = 0.0004; % reaction wheel inertia kg.m^2
 Tc_max = 0.05; % commanded toraue saturation N*m
 wr_max = 2800; %reaction wheel velocity saturation rpm
+w_sat = wr_max*2*pi/60; 
 To_m = 0.8; %measurement delay second
 noise = 10^-9; %meqsurement noise variance
 T_e = 0.5; %estimator time constant second
@@ -48,13 +49,13 @@ bode(sys);
 nichols(sys);
 
 %% Q12 check controllable of the system
-ctrb(sys) % or ctrb(A,B) - using for controllable
-rank(ctrb(sys)) % rank calculate 
+ctrb(sys); % or ctrb(A,B) - using for controllable
+rank(ctrb(sys)); % rank calculate 
 %rank result is 4 - this rank equal the number of pole(4); diff off rank and pole is 4-4=0. Result of diff (0) is number of non-controllable pole.
 %This system is controllable
 
 %% Q13 check observable of the system
-obsv(sys) % or obsv(C,D) - using for observable
-rank(obsv(sys)) % rank calculate 
+obsv(sys); % or obsv(C,D) - using for observable
+rank(obsv(sys)); % rank calculate 
 %rank result is 4 - this rank equal the number of pole(4); diff off rank and pole is 4-4=0. Result of diff (0) is number of non-observable pole.
 %This system is observable
