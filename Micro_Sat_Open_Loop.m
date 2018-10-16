@@ -1,4 +1,4 @@
-%Advance Control Lab1 - Q7
+%Open-loop modeling and analysis of flexible micro satellite
 
 J_s = 31.38; %Satellite Inertia kg.m^2
 w = 2.6268; %Flexible mode freauency rad*s^-1
